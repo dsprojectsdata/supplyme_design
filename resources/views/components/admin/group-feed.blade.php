@@ -32,7 +32,7 @@
     }
 
     .coal-sup-pol-img{
-        background: #f8f8f8;
+        /* background: #f8f8f8; */
     }
 
     .news-share-icon input[type="file"]{
