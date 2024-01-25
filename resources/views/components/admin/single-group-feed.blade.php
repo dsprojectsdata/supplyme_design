@@ -43,14 +43,23 @@
     }
     .feed-comment-box .feed-comment{
         display: flex;
-        gap: 8px;
+        column-gap: 8px;
+        flex-wrap: wrap;
+        row-gap: 0px;
     }
-    .feed-comment-box .feed-comment > div:last-child{
+    .feed-comment-box .feed-comment > div:nth-child(2){
         width: 100%;
+        flex: 1;
     }
     .coal-sup-comment-top span img{
         width: 40px;
         height: 40px;
+    }
+    .feed-comment-box .feed-comment .reply-box{
+        display: block !important;
+        flex-basis: 100%;
+        margin-left: 46px;
+        margin-bottom: 8px;
     }
 </style>
 <?php

@@ -108,26 +108,32 @@ if (@getimagesize($external_link)) {
 </div>
 @else
     <div class="feed-comment {{$id}}" style="margin-left: 50px!important;" data-parent="{{$comment->id}}" data-id="{{ $comment->id }}">
-    <div class="d-flex align-items-center gap-1">
-        <span><img src="{{ $profileImg2 }}"></span>    
-        <h4>
-            {{$comment->user->firstname.' '.$comment->user->lastname}}
-        </h4>
-    </div>   
-    <p class="mt-2 font-15">
-            {{$comment->comment}}
-        </p>
-        <span class="feed-created-at">{{ $comment->created_at->diffForHumans() }}</span>
-
-        <div class="like-comment-news like-comment-newsicon">
-            <a href="javascript:void(0);" class="like-count @if($comment->likes()->where('user_id', auth()->id())->count()) text-primary @endif" data-id="{{ $comment->id }}" data-type="comment">
-                <i class="bi bi-hand-thumbs-up"></i>
-                <span>{{convertCount($comment->like_count)}}</span> Likes</a>
-                @if($comment->user_id == auth()->id())
-                    <a href="{{route('admin.comment.delete', $comment->id)}}" class="delete-comment" data-id="{{$comment->id}}">
-                    <i class="bi bi-trash"></i>
-                    Delete</a>
-                @endif
+        <div>
+            <span><img src="{{ $profileImg2 }}"></span>
+        </div>
+        <div>
+            <div class="alert alert-secondary m-0" role="alert">
+                <div class="d-flex align-items-center justify-content-between gap-1">
+                    <h4>
+                        {{$comment->user->firstname.' '.$comment->user->lastname}}
+                    </h4>
+                    <span class="feed-created-at">{{ $comment->created_at->diffForHumans() }}</span>
+                </div>   
+                <p class="mt-2 font-15">
+                    {{$comment->comment}}
+                </p>
+            </div>
+    
+            <div class="like-comment-news like-comment-newsicon">
+                <a href="javascript:void(0);" class="like-count @if($comment->likes()->where('user_id', auth()->id())->count()) text-primary @endif" data-id="{{ $comment->id }}" data-type="comment">
+                    <i class="bi bi-hand-thumbs-up"></i>
+                    <span>{{convertCount($comment->like_count)}}</span> Likes</a>
+                    @if($comment->user_id == auth()->id())
+                        <a href="{{route('admin.comment.delete', $comment->id)}}" class="delete-comment" data-id="{{$comment->id}}">
+                        <i class="bi bi-trash"></i>
+                        Delete</a>
+                    @endif
+            </div>
         </div>
     </div>
 @endif
