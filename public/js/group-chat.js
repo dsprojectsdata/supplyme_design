@@ -126,7 +126,7 @@ function getMessages(groupId, offset=null, flag=true, append=false) {
         url +=  '/' + offset;
     }
     if (!append) {
-        document.getElementById('message-box').innerHTML = `<span class="spinner-border spinner-border-sm justify-content-center" role="status" aria-hidden="true"></span>`;
+        document.getElementById('message-box').innerHTML = `<div class="chat-spinner"><span class="spinner-border justify-content-center" role="status" aria-hidden="true"></span></div>`;
     }
     $.get(url, (response) => {
         populateGroupMessageBoxDiv(groupId, response.data, flag, append)

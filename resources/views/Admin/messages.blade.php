@@ -74,6 +74,26 @@
         background-color: #ffffff9c;
         z-index: 1;
     }
+    .chat-view-bott{
+        grid-template-columns: 40px 1fr;
+        gap: 8px;
+    }
+    .chat-view-bott img{
+        border-radius: 100%;
+    }
+    .chat-spinner{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .chat-spinner .spinner-border{
+        width: 32px;
+        height: 32px;
+    }
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tagsinput/0.6.0/bootstrap-tagsinput.css" />
 <link href="{{asset('SuperAdmin/assets/libs/choices.js/public/assets/styles/choices.min.css')}}" rel="stylesheet" type="text/css" />
