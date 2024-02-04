@@ -205,7 +205,7 @@
          // fetch questionnaire data
          $('body').on('click', '.show-questionnaire', function(e) {
             e.preventDefault();
-            let url = $(this).attr('href');
+            let url = $(this).find('a').attr('href');
             $.getJSON(url, function(response) {
                 $('body').find('div#questionnaire-answer-form').html(response.data);
             });

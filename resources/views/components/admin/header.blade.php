@@ -42,6 +42,7 @@ body {
   text-align: left;
   cursor: pointer;
   outline: none;
+  margin: 0
 }
 
 /* On mouse-over */

@@ -98,6 +98,9 @@ if (@getimagesize($external_link)) {
 
             </div>
         </div>
+        <div class="questionnaire-preview">
+
+        </div>
         <div id="questionnaire-modal-add" class="d-none">
 
         </div>

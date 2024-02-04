@@ -7,11 +7,22 @@
         display: none;
         padding-left: 8px;
         position: relative;
-        width: auto;
+        width: calc(100% - 20px);
         left: 20px;
         background: none;
     }
     .listing .nav-link {
+        border: none !important;
+    }
+    .dropdown-container .listing .nav-link:hover{
+        border: none !important;
+    }
+    .questionnaire-result-list .dropdown-btn{
+        border-top: 1px solid;
+        border-radius: 0;
+        box-shadow: none !important;
+    }
+    .questionnaire-result-list .dropdown-btn:first-child{
         border: none;
     }
 </style>
@@ -27,7 +38,7 @@
                         <a href="#" class="active">Questionnaire</a>
                     </div>
                     <!-- dropdown tabs with responsers -->
-                    <ul class="d-flex flex-column nav nav-tabs listing" id="nav-tabs" role="tablist">
+                    <ul class="d-flex flex-column nav nav-tabs questionnaire-result-list listing" id="nav-tabs" role="tablist">
                         @forelse($questionnaires as $questionnaire)
                             <button class="btn btn-sm dropdown-btn text-primary bg-none" type="button">
                                 {{ $questionnaire->title }} <i class="fa fa-caret-down"></i>
